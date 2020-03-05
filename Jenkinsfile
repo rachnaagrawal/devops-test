@@ -20,7 +20,7 @@ pipeline{
 		}
 		stage('Munit test'){
 			steps{
-			withMaven(maven:maven){
+			withMaven(maven:'maven'){
 				bat 'mvn clean install'
 			}
 			}
