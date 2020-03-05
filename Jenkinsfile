@@ -20,7 +20,9 @@ pipeline{
 		}
 		stage('Munit test'){
 			steps{
-			bat 'mvn clean test'
+			withMaven(maven:maven){
+				bat 'mvn clean test'
+			}
 			}
 		}
 		stage('Maven Build and Deploy to Exchange'){
